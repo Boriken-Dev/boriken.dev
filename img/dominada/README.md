@@ -5,7 +5,7 @@ icon changes; it is not generated here.
 
 ## Screenshots
 
-Captured from a real phone (1080x2340), release build, with **invented player
+Captured from a real phone, release build, with **invented player
 names** — Zeus and Atenea against Odín and Freya. A screenshot of a live game
 shows whoever was actually playing, and this repository is public.
 
@@ -14,6 +14,12 @@ shows whoever was actually playing, and this repository is public.
 | `partidas.png` | The games screen with a game in play |
 | `tablero.png` | The scoreboard, card view, hands broken down |
 | `libreta.png` | The scoreboard, notepad view |
+
+All are 1080x2130: captured at 1080x2340 and cropped. The status bar shows
+which apps have notifications waiting and the navigation bar is the phone's,
+not the app's — neither belongs in a picture of *this* app on a public page.
+Crop with `py -3 tools/crop_png.py shot.png --top 100 --bottom 110` from the
+app repository.
 
 ### How they were taken
 
