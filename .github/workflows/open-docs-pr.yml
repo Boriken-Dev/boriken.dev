@@ -1,0 +1,54 @@
+name: open-docs-pr
+
+# Opens a pull request when a `docs/*` branch is pushed here.
+#
+# The branch comes from an app's private repository, pushed with a deploy key
+# scoped to this repository alone. A deploy key can push but cannot open a
+# pull request, and that is the useful half of the arrangement: **the private
+# repository can propose a change to this public one, and can do nothing
+# else** — not merge, not touch `main`, not read anything.
+#
+# The review is the point. Everything in such a branch is about to become
+# public, and a person should see it first.
+on:
+  push:
+    branches: ['docs/**']
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Open the pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          if gh pr view "$BRANCH" >/dev/null 2>&1; then
+            echo "A pull request for $BRANCH is already open; the push updated it."
+            exit 0
+          fi
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Docs from ${BRANCH#docs/}" \
+            --body "$(cat <<'EOF'
+          Opened automatically from a release in a private application
+          repository, which pushed this branch with a deploy key.
+
+          **Read the diff before merging.** This is the boundary between a
+          closed source tree and a public site: everything here is about to
+          be published, and this pull request is what makes that a decision
+          rather than a side effect.
+
+          Only files named explicitly in the publishing workflow can appear.
+          If the diff contains anything else, do not merge — the allow-list
+          is wrong, and that is the bug to fix.
+          EOF
+          )"
