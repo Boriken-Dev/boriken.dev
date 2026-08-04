@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-08-03
+
+Three people can play, and a club can edit its own sheet.
+
+### Added
+
+- **The app can fill an empty seat.** Pick which seats it plays before
+  dealing; a table short a player is a game tonight rather than a game some
+  other night. Deliberately plain — the heaviest legal tile, otherwise draw,
+  otherwise pass — and it chooses only from the moves the rules already
+  allow, so it can never make a move a person could not. Which seats the app
+  holds is shown, so nobody has to wonder whether the fourth player is real.
+- **A sheet editor.** Title, header lines, drag-reorderable columns with
+  renameable headings, signature and adjustment blocks, page size. Opening a
+  shipped sheet makes a copy rather than editing it in place.
+
+### Fixed
+
+- A release APK built without a signing keystore is now named
+  `-debug-signed` and says so in the build log. The fallback was documented
+  but invisible after download, and a debug-signed build cannot be upgraded
+  over by a properly signed one.
+
 ## [0.5.0] - 2026-08-03
 
 Rules a table can set, a sheet it can file, and a wrong number it can fix.
