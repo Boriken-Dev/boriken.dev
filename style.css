@@ -148,3 +148,75 @@ footer a { color: var(--ivory); }
   a { color: #7fd3a4; }
   h2 { color: #bfe6cf; }
 }
+
+/* ---------------------------------------------------------------- gallery
+
+   A row of screenshots you scroll sideways, rather than a column you scroll
+   past. Phone screenshots are tall; stacked, three of them push everything
+   else off the page and nobody reaches the text underneath.
+
+   No JavaScript. `scroll-snap` gives the phone-like feel where a shot comes
+   to rest centred, and a plain overflow container means it works with a
+   trackpad, a wheel, a touchscreen, and the keyboard — a hand-built carousel
+   usually manages one of those.
+*/
+
+.shots {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Room for the shadow and the focus ring; without it both are clipped by
+     the scroll container. */
+  padding: 4px 4px 16px;
+  margin: 18px 0 8px;
+  /* Momentum on iOS, and a scrollbar that does not cover the last image. */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.shots figure {
+  flex: 0 0 auto;
+  width: min(260px, 62vw);
+  margin: 0;
+  scroll-snap-align: center;
+}
+
+.shots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--rule);
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.shots figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+/* Said in text rather than left to a cut-off image, which reads as a broken
+   page rather than as an invitation to scroll. */
+.shots-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+
+@media (min-width: 900px) {
+  .shots figure { width: 280px; }
+}
+
+/* Somebody who has asked for less motion should not get snap-scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  .shots { scroll-snap-type: none; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .shots img { background: #1b2c22; }
+}
+

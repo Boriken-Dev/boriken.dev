@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dominada — anotador de dominó</title>
-<meta name="description" content="Dominada lleva la anotación del dominó: parejas, manos, tranques y premios. Reglas puertorriqueñas y perfiles que puedes cambiar.">
+<meta name="description" content="Dominada anota el dominó y también lo juega: en la misma mesa por wifi o de lejos por internet, con las manos cifradas. Reglas puertorriqueñas y perfiles que puedes cambiar.">
 <link rel="icon" href="../img/dominada/icon.png">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -14,7 +14,8 @@
   <img class="hero-icon" src="../img/dominada/icon.png" alt="Dominada">
   <h1>Dominada</h1>
   <p class="tagline">
-    El anotador para que la mesa discuta del juego y no de la suma.
+    Para que la mesa discuta del juego y no de la suma — y para jugar cuando
+    la mesa no cabe en un sitio.
   </p>
   <p class="lang"><a href="en/">English</a> · <a href="../">Boriken Dev</a></p>
 </header>
@@ -24,10 +25,17 @@
 <section>
   <h2>Qué hace</h2>
   <p>
-    Dominada lleva la cuenta de una partida de dominó: quién anotó, cuánto, y
-    cómo van las parejas. Está pensado para la mesa — números grandes que se
-    leen del otro lado, una sola pantalla para anotar la mano, y la pantalla no
-    se apaga mientras la partida está abierta.
+    Dominada hace dos cosas. <strong>Lleva la cuenta</strong> de una partida
+    que se juega con fichas de verdad: quién anotó, cuánto, y cómo van las
+    parejas — números grandes que se leen del otro lado de la mesa, una sola
+    pantalla para anotar la mano, y la pantalla no se apaga mientras la
+    partida está abierta.
+  </p>
+  <p>
+    Y <strong>reparte y juega</strong>, cuando no hay fichas o no están todos
+    en el mismo sitio. Las partidas que se juegan en la app quedan en el mismo
+    historial que las que se anotaron a mano: una noche jugada por teléfono
+    deja el mismo récord que una jugada en la mesa.
   </p>
 </section>
 
@@ -65,18 +73,147 @@
 
 <section>
   <h2>Cómo se ve</h2>
-  <figure>
-    <img src="../img/dominada/partidas.png" alt="Pantalla de partidas: la partida activa con el marcador y la meta." width="1080" height="2130">
-    <figcaption>La partida activa, lista para continuar.</figcaption>
-  </figure>
-  <figure>
-    <img src="../img/dominada/tablero.png" alt="Tablero: los totales de cada pareja y el detalle de cada mano." width="1080" height="2130">
-    <figcaption>Vista tarjeta: los totales grandes y el detalle de cada mano.</figcaption>
-  </figure>
-  <figure>
-    <img src="../img/dominada/libreta.png" alt="Vista libreta: nombres subrayados arriba, una raya entre las columnas y una línea entre rondas." width="1080" height="2130">
-    <figcaption>Vista libreta, igual que se anota en papel.</figcaption>
-  </figure>
+  <p class="shots-hint">Desliza para ver más &rarr;</p>
+  <div class="shots">
+    <figure>
+      <img src="../img/dominada/partidas.png" alt="Pantalla de partidas: la partida activa con el marcador y la meta." width="1080" height="2130" loading="lazy">
+      <figcaption>La partida activa, lista para continuar.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/tablero.png" alt="Tablero: los totales de cada pareja y el detalle de cada mano." width="1080" height="2130" loading="lazy">
+      <figcaption>Vista tarjeta: los totales grandes y el detalle de cada mano.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/libreta.png" alt="Vista libreta: nombres subrayados arriba y los puntos de cada mano." width="1080" height="2130" loading="lazy">
+      <figcaption>Vista libreta, igual que se anota en papel.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/grande.png" alt="Vista grande: solo los totales, del tamaño que quepa." width="1080" height="2130" loading="lazy">
+      <figcaption>Modo mesa: solo los números, para una tableta parada o un televisor.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/planilla.png" alt="La planilla: la hoja oficial rayada, con los totales acumulados." width="1080" height="2130" loading="lazy">
+      <figcaption>La planilla oficial — también sale en PDF rellenable.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/remoto.png" alt="Pantalla Remoto: abrir una mesa, mesa nueva, entrar a una mesa." width="1080" height="2130" loading="lazy">
+      <figcaption>Remoto: la mesa en los teléfonos, junta o de lejos.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/jugadores.png" alt="Listado de jugadores con su récord." width="1080" height="2130" loading="lazy">
+      <figcaption>Cada jugador guarda su récord y sus partidas.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/parejas.png" alt="Listado de parejas, que salen solas de las partidas jugadas." width="1080" height="2130" loading="lazy">
+      <figcaption>Las parejas salen solas de lo que se ha jugado.</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/dominada/perfiles.png" alt="Perfiles de reglas incluidos y propios." width="1080" height="2130" loading="lazy">
+      <figcaption>Los perfiles de reglas: los que vienen y los tuyos.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Jugar en la app, no solo anotar</h2>
+  <p>
+    Dominada también reparte y juega. La app baraja, cada cual ve
+    <em>solo</em> sus fichas, y las reglas se aplican solas: no te deja
+    pasar si tienes ficha que pega, y una jugada que no cuadra se rechaza
+    diciéndote cuál regla la rechazó.
+  </p>
+
+  <h3>En la misma mesa</h3>
+  <p>
+    Uno abre la mesa y los demás la encuentran solos en el mismo wifi — no
+    hace falta escribir una dirección. Si el wifi bloquea eso, hay un código
+    de seis letras que se lee en voz alta, un código QR, y también se puede
+    escribir la dirección a mano. <strong>Sin internet, sin cuenta y sin
+    servidor de nadie</strong>: los equipos se hablan directo.
+  </p>
+
+  <h3>El salón: primero llegan, después se arman las parejas</h3>
+  <p>
+    Se abre un salón y la gente va entrando. El que abrió acomoda quién juega
+    con quién, y la partida se crea cuando ya están todos — con los puestos
+    correctos desde el principio. Al entrar escoges tu silla y quedas puesto
+    ahí.
+  </p>
+
+  <h3>De lejos, por internet</h3>
+  <p>
+    Cuando no están en el mismo sitio, la partida pasa por un relevo. El
+    relevo <strong>no puede leer nada</strong>: lo que va por ahí está
+    cifrado con una llave que sale del código de invitación y que el relevo
+    nunca recibe. Y la mano de cada cual va cifrada aparte, así que ni
+    siquiera los demás jugadores pueden ver tus fichas.
+  </p>
+  <p>
+    <strong>El código de invitación es la llave.</strong> Quien lo tenga
+    entra, igual que un enlace de invitación a un grupo. Enseñarlo por cámara
+    lo deja en los dos equipos; mandarlo por chat se lo da a quien lo reciba.
+  </p>
+
+  <h3>Cada cual con su copia</h3>
+  <p>
+    Todos los que están en la mesa guardan la partida según se va jugando, así
+    que si al que la abrió se le acaba la batería, otro la puede seguir. Lo
+    único que no se puede heredar es una mano a medio jugar: el barajado se
+    mantiene secreto hasta que la mano termina — a propósito, para que nadie
+    pueda inventarse un reparto — y por eso ningún otro equipo puede
+    continuarla honestamente.
+  </p>
+
+  <h3>Mirar sin jugar</h3>
+  <p>
+    El que no está jugando entra como <strong>espectador</strong>: ve la
+    partida y no puede anotar nada. Eso no se controla escondiendo botones —
+    el que lleva la partida rechaza lo que mande un espectador. Y cualquiera
+    puede poner su pantalla en <strong>modo mesa</strong>: solo los números,
+    del tamaño que quepa, para una tableta parada o un televisor.
+  </p>
+</section>
+
+<section>
+  <h2>La planilla</h2>
+  <p>
+    La hoja oficial, rayada como la de papel. Sale como imagen para mandarla
+    por chat y como <strong>PDF de verdad</strong> — con el texto
+    seleccionable y las casillas rellenables, no una foto de una tabla.
+  </p>
+  <p>
+    Las plantillas se hacen por campos con nombre, no por coordenadas: un club
+    decide qué aparece y cómo se llama cada cosa, y la app la dibuja.
+  </p>
+</section>
+
+<section>
+  <h2>Récords, parejas y rivalidades</h2>
+  <p>
+    Cada jugador guarda su récord — partidas jugadas y ganadas, por ciento de
+    victorias, puntos a favor y en contra, premios — y la lista de las partidas
+    en que salió.
+  </p>
+  <p>
+    Las parejas no hay que crearlas: salen solas de las partidas jugadas. Si
+    dos jugaron juntos, ahí está la pareja con su récord, y le puedes poner
+    nombre. Cuando dos parejas se han enfrentado varias veces, la app arma la
+    <strong>rivalidad</strong>: el historial entre ellas, en una tarjeta que
+    se comparte.
+  </p>
+</section>
+
+<section>
+  <h2>Respaldo y recuperación</h2>
+  <p>
+    Todo lo tuyo — partidas, jugadores, perfiles, plantillas y las fotos si
+    quieres — se guarda en un solo archivo, donde tú digas. Se recupera del
+    mismo archivo en otro equipo, o en el mismo después de reinstalar.
+  </p>
+  <p>
+    Al recuperar, la app te dice qué encontró y qué reemplazó, en vez de
+    mezclar en silencio.
+  </p>
 </section>
 
 <section>
@@ -91,20 +228,6 @@
     Los perfiles que vienen incluidos se copian y se editan, o haces el tuyo.
     El perfil se guarda <em>dentro</em> de la partida: cambiarlo o borrarlo
     después no le mueve un punto a una partida ya jugada.
-  </p>
-</section>
-
-<section>
-  <h2>Jugadores y parejas</h2>
-  <p>
-    Cada jugador guarda su récord — partidas jugadas y ganadas, por ciento de
-    victorias, puntos a favor y en contra, premios — y la lista de las partidas
-    en que salió.
-  </p>
-  <p>
-    Las parejas no hay que crearlas: salen solas de las partidas jugadas. Si
-    dos jugaron juntos, ahí está la pareja con su récord. Le puedes poner
-    nombre; si no, va por los nombres de sus jugadores.
   </p>
 </section>
 
@@ -127,7 +250,12 @@
   <h2>Preguntas</h2>
 
   <h3>¿Necesito internet?</h3>
-  <p>No. Todo se guarda en tu equipo y la app funciona completa sin conexión.</p>
+  <p>
+    Para anotar, no: todo se guarda en tu equipo y la app funciona completa
+    sin conexión. Para jugar en la misma mesa tampoco — basta con estar en el
+    mismo wifi, aunque ese wifi no tenga internet. Solo hace falta para jugar
+    con alguien que no está contigo.
+  </p>
 
   <h3>¿Necesito una cuenta?</h3>
   <p>No hay cuentas ni registro.</p>
@@ -135,12 +263,48 @@
   <h3>¿Sirve para dominó dominicano, cubano, u otro?</h3>
   <p>
     El motor no sabe de dónde son las reglas: lo puertorriqueño está en los
-    perfiles que vienen incluidos, no en cómo cuenta. Si tu mesa juega distinto,
-    se hace un perfil.
+    perfiles que vienen incluidos, no en cómo cuenta. Vienen
+    <strong>Puerto Rico 200</strong>, <strong>500 con premios</strong>,
+    <strong>Dominicano 200</strong> e <strong>Individual 100</strong> —
+    ese último de cuatro jugadores por su cuenta, no en parejas. Las mesas
+    varían, así que cada perfil dice de dónde salió su convención. Si tu mesa
+    juega distinto, se hace un perfil.
   </p>
 
   <h3>¿Se puede jugar contra otra persona por la app?</h3>
-  <p>Todavía no. Dominada anota la partida; no reparte las fichas.</p>
+  <p>
+    Sí. En la misma mesa por wifi, o de lejos por internet. La app reparte,
+    cada cual ve solo sus fichas y las reglas se aplican solas.
+  </p>
+
+  <h3>Si juego de lejos, ¿quién puede ver mis fichas?</h3>
+  <p>
+    Nadie. Tu mano va cifrada con una llave que solo tiene tu equipo — ni el
+    relevo por donde pasa, ni los demás jugadores, pueden abrirla. El relevo
+    tampoco puede leer el resto de la partida: eso no es una promesa, es que
+    no tiene con qué.
+  </p>
+
+  <h3>¿Necesito cuenta para jugar de lejos?</h3>
+  <p>
+    No. El código de invitación es lo único que hace falta — y por eso
+    <strong>quien tenga el código entra</strong>, igual que un enlace de
+    invitación a un grupo. Enseñarlo por cámara lo deja en los dos equipos.
+  </p>
+
+  <h3>¿Y si se le acaba la batería al que lleva la partida?</h3>
+  <p>
+    Todos guardan la partida según se juega, así que otro la sigue. Lo único
+    que se pierde es la mano a medio jugar, porque el barajado se mantiene
+    secreto hasta que la mano termina — que es justo lo que impide que nadie
+    se invente un reparto.
+  </p>
+
+  <h3>¿Puedo poner una tableta o un televisor como mesa?</h3>
+  <p>
+    Sí, con el modo mesa: solo los totales, del tamaño que quepa, y la
+    pantalla no se apaga. Un espectador no puede anotar nada.
+  </p>
 </section>
 
 <section>
