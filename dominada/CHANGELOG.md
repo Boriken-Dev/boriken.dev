@@ -7,6 +7,80 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-08-03
+
+Rules a table can set, a sheet it can file, and a wrong number it can fix.
+
+### Added
+
+- **The tournament sheet** (*planilla*): a fourth scoreboard view ruled like
+  the paper form, exportable as a PNG for a group chat or as a **real PDF**
+  for the desk that files it — selectable text, not a picture of text, with
+  the blank cells as fillable form fields so a table can keep score in an
+  ordinary viewer or print a stack empty.
+- **Sheet templates.** Three shipped (casera, torneo, cuatro-lados) and a club
+  can duplicate one, rename its columns, put its own name on it and choose
+  which sheet the view and the exports use.
+- **Who opens the first hand is a rule**, not a constant. The doble seis
+  remains the default and what every existing game plays.
+- **A refused move now says which rule refused it**, in Spanish. It used to
+  arrive as a debug dump, or — on the host's own screen — as nothing at all.
+- **Pro mode.** A table can play for penalties, priced per infraction. The app
+  never applies one: it notices, and the **other pareja decides** whether to
+  claim it or let it go, which is what every federation text says and what no
+  automatic enforcement matches. A fine comes off the offender's own score.
+  Letting it go is recorded too.
+- **Corrections.** A wrong number stays in the log and is marked corrected
+  rather than erased — long-press a hand to fix it, and both figures show on
+  the scoreboard and on the printed sheet, with the reason. Anybody can
+  contest one; the correction still stands and the disagreement is visible,
+  because the app is a scorekeeper and not a referee.
+
+### Fixed
+
+- **Choosing the planilla view silently reverted to the card.** The style
+  shipped missing from two independent allow-lists, so the preference worked
+  until the app restarted and then normalised away with nothing reporting it.
+- **Editing a profile reset the rules its form does not show.** The document
+  was rebuilt field by field in Dart, so the tranque-count setting was being
+  quietly undone by an unrelated edit like a rename.
+- **Toggling pip samples forgot who was holding the device.** Every screen
+  re-listed all the settings by hand, and that one had stopped passing `me`.
+- **The PDF could not print `Árbitro` or `Peña`.** The built-in PDF fonts have
+  no Unicode support and drop accented glyphs silently. A font is now embedded
+  — downloading one at export time would fail in the club hall, which is
+  exactly where a scoresheet gets printed.
+- `undo` is refused once a table is shared, and correction offered instead. A
+  guest detects a gap forward and has no notion of the log getting shorter, so
+  popping an event left every guest holding something the host no longer had.
+
+## [0.4.1] - 2026-08-03
+
+Shared tables, a rivalry worth posting, and playing on the phones.
+
+### Added
+
+- **Remote play**: the app deals, holds each player's tiles privately, and
+  shows the board — over the local network at the same table, or through an
+  encrypted relay when apart. Commit-and-reveal, so anybody can check the deal
+  afterwards.
+- **Rivalries and partner chemistry** between parejas, with a shareable card.
+
+### Fixed
+
+- **Hosting failed with `SocketException … errno = 1`.** The app had never
+  declared `INTERNET`, which on Android is what allows binding a socket at
+  all. Debug builds get it free for hot reload, so it was invisible to every
+  test, to desktop, and to debug installs — and broke only a release build on
+  a real phone.
+- The build had been asking for **`RECORD_AUDIO`**, merged in by the camera
+  plugin because it supports video. This app photographs tiles.
+- **"Host this table" hung on a spinner forever.** The discovery call never
+  called back, and no try/catch can catch waiting forever.
+- **"Deal a hand" did nothing.** The host had no frame sink — the deal worked,
+  every guest was served, and the screen that pressed the button was never
+  told.
+
 ## [0.4.0] - 2026-08-02
 
 The first tagged release. Everything before this shipped by installing a
