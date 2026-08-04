@@ -20,6 +20,7 @@ shows whoever was actually playing, and this repository is public.
 | `jugadores.png` | The players list with records |
 | `parejas.png` | The teams list |
 | `perfiles.png` | Rule profiles, built-in and custom |
+| `sala-remota.png` | A remote room: connected to the relay, QR and room code |
 
 All are 1080x2130: captured at 1080x2340 and cropped. The status bar shows
 which apps have notifications waiting and the navigation bar is the phone's,
@@ -54,8 +55,35 @@ Two Waydroid-specific traps:
   `waydroid app launch` fails with "Already tracking a session" when a
   session is running.
 
-**Use a release build.** A debug build paints a DEBUG ribbon across the top
-right corner of every screenshot.
+**Use a profile build, not release or debug.**
+
+- A **debug** build paints a DEBUG ribbon across the top right corner.
+- A **release** build has no relay credential — `relayCredential()` refuses
+  to return one when `kReleaseMode` is true, deliberately, because a key
+  compiled into a shipped APK is extractable in minutes. So the Remote screen
+  in a release build correctly says remote play is unavailable, which is
+  honest in the app and useless in a screenshot meant to show the feature.
+- A **profile** build has no ribbon and `kReleaseMode` is false, so:
+
+```
+flutter build apk --profile --dart-define=DOMINADA_RELAY_KEY=<a signed key>
+```
+
+**Dark theme**, set in the app's own Settings screen (Appearance → Theme →
+Dark) rather than by writing a preference file, so the shots show a state a
+user can actually reach.
+
+### About the QR in `sala-remota.png`
+
+It encodes a real invitation: `dominada://join?r=…&c=casa-…#<key>`. That is
+deliberate — a fabricated QR would scan to nothing, on a page that tells
+people the code *is* the key.
+
+It is safe to publish because the room is gone. Rooms exist only while
+occupied and the relay stores nothing, so the key opens an empty room that no
+longer exists. **Do not reuse this reasoning for a room somebody is actually
+in**: the same picture taken during a live game would hand every viewer a
+seat at it.
 
 Two things that will bite whoever does this next:
 
