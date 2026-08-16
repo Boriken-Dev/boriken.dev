@@ -5,28 +5,45 @@ icon changes; it is not generated here.
 
 ## Screenshots
 
-Captured from a real phone, release build, with **invented player
-names** — Zeus and Atenea against Odín and Freya. A screenshot of a live game
-shows whoever was actually playing, and this repository is public.
+Captured from a disposable emulated Android device, from a **profile** build,
+with **invented player names** — Zeus and Atenea against Odín and Freya. A
+screenshot of a live game shows whoever was actually playing, and this
+repository is public. Both of those choices matter; see "How they were taken".
+
+Listed in the order the product pages show them.
 
 | File | Shows |
 |---|---|
+| `mesa.png` | The table: the row of played tiles, your own hand below |
+| `mano.png` | A freshly dealt hand, opened with the double six |
 | `partidas.png` | The games screen with a game in play |
 | `tablero.png` | The scoreboard, card view, hands broken down |
 | `libreta.png` | The scoreboard, notepad view |
 | `grande.png` | The scoreboard, large view — what table mode shows |
 | `planilla.png` | The official scoresheet with running totals |
 | `remoto.png` | The Remote section: open, create or join a table |
+| `sala-remota.png` | A remote room: connected to the relay, QR and room code |
+| `record.png` | One player's record: games, win rate, points, partners |
+| `rivalidad.png` | A rivalry between two teams: history, streak, margin |
+| `tarjeta.png` | The shareable rivalry card |
 | `jugadores.png` | The players list with records |
 | `parejas.png` | The teams list |
 | `perfiles.png` | Rule profiles, built-in and custom |
-| `sala-remota.png` | A remote room: connected to the relay, QR and room code |
 
-All are 1080x2130: captured at 1080x2340 and cropped. The status bar shows
-which apps have notifications waiting and the navigation bar is the phone's,
-not the app's — neither belongs in a picture of *this* app on a public page.
-Crop with `py -3 tools/crop_png.py shot.png --top 100 --bottom 110` from the
-app repository.
+**Dimensions are not uniform, and the pages already say so.** Eleven are
+1080x2230 — captured at 1080x2340 with only the navigation bar cropped. Four
+(`grande`, `libreta`, `planilla`, `sala-remota`) are 1080x2130: they survive
+from an earlier set that also took 100px off the top for a status bar the
+emulated device does not have, which ate into app bars and was dropped in
+commit `ed3361c`. Recapturing those four would make the set uniform.
+
+The navigation bar is the device's, not the app's, and does not belong in a
+picture of *this* app. Crop with `py -3 tools/crop_png.py shot.png --bottom
+110` from the app repository — no `--top`.
+
+Every `width`/`height` attribute on the product pages is derived from the real
+file so nothing reflows as the images load. **Re-derive them after any
+recapture**; a stale pair is invisible until the page jumps.
 
 ### How they were taken
 
