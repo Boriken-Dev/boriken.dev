@@ -13,10 +13,12 @@ policy the app stores require at a public URL.
 index.html              the landing page: who we are, and the apps
 style.css               one stylesheet, hand-written, no build step
 img/<app>/              icon and screenshots for that app
+img/<app>/README.md     where those screenshots came from, and the rules for new ones
 <app>/index.html        the app's page, Spanish
 <app>/en/index.html     the app's page, English
 <app>/privacidad.html   privacy policy, Spanish
 <app>/en/privacy.html   privacy policy, English
+<app>/CHANGELOG.md      pushed here by the app's own release workflow
 ```
 
 A second app is a new directory and one card on the landing page. That is the
@@ -37,10 +39,18 @@ how much you should want them:
    moment will also notice when the description has quietly gone stale, and a
    script will not.
 2. **Pushed from the app's repository.** If it does become a chore, the app's
-   own release workflow can open a pull request here containing just its own
-   directory — never touching another app's page or the landing page. Keep the
-   ownership boundary strict: an app may write `<app>/` and `img/<app>/`, and
-   nothing else.
+   own release workflow can push here directly, using a deploy key scoped to
+   this repository alone. Keep the ownership boundary strict: an app may write
+   `<app>/` and `img/<app>/`, and nothing else.
+
+   **There is no pull request, on purpose.** What may become public is decided
+   once, by the allow-list in the app's publishing workflow; re-reading a diff
+   that says `CHANGELOG.md -> dominada/CHANGELOG.md` every release carries no
+   information and costs four manual steps. The review belongs on changes to
+   that list, and the commit on `main` is the record of what went out. Today
+   Dominada uses this for `dominada/CHANGELOG.md` and nothing else — which is
+   why that file is not edited here: a fix would be overwritten by the next
+   release.
 
 Whichever is used, **the privacy URL must stay stable.** It goes into store
 listings, and changing it later means editing every listing.
@@ -55,8 +65,12 @@ Screenshots go in `img/<app>/`. They are public, so:
 
 - **No real people's names**, and no faces, documents or anything identifying.
   Use demo data — a screenshot of a live game will show whoever was playing.
-- Capture from a phone, not a resized desktop window: an app store rejects
-  desktop aspect ratios, and the same images usually serve both.
+- **Capture from a disposable device seeded with demo data**, never from a
+  phone somebody actually uses: a device that holds no real game cannot leak
+  one. For Dominada that is an emulated Android container — the how, and the
+  traps, are in `img/dominada/README.md`.
+- Phone dimensions, not a resized desktop window: an app store rejects desktop
+  aspect ratios, and the same images usually serve both.
 
 ## Contact
 
