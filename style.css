@@ -1,5 +1,6 @@
-/* Dominada — the site. Hand-written, no build step: it should still be
-   editable in five years by opening it. Colours follow the app's icon. */
+/* boriken.dev — the whole site, landing page and app pages alike.
+   Hand-written, no build step: it should still be editable in five years by
+   opening it. Colours follow Dominada's icon, which is the only app so far. */
 
 :root {
   --felt: #104e30;
