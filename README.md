@@ -10,7 +10,8 @@ policy the app stores require at a public URL.
 ## Layout
 
 ```
-index.html              the landing page: who we are, and the apps
+index.html              the landing page: who we are, and the apps (English)
+es/index.html           the landing page, Spanish
 style.css               one stylesheet, hand-written, no build step
 img/<app>/              icon and screenshots for that app
 img/<app>/README.md     where those screenshots came from, and the rules for new ones
