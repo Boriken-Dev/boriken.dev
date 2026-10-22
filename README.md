@@ -21,6 +21,11 @@ img/<app>/README.md     where those screenshots came from, and the rules for new
 <app>/CHANGELOG.md      pushed here by the app's own release workflow
 ```
 
+An app whose own language is English leads in English instead, and LineupMux
+does: `lineupmux/index.html` and `lineupmux/privacy.html` are English, and
+`lineupmux/es/index.html` and `lineupmux/es/privacidad.html` the Spanish. Every
+page links to its other language in the header.
+
 A second app is a new directory and one card on the landing page. That is the
 whole extension mechanism, and it is deliberately boring.
 
