@@ -10,22 +10,23 @@ policy the app stores require at a public URL.
 ## Layout
 
 ```
-index.html              the landing page: who we are, and the apps (English)
+index.html              the landing page: who we are, and the apps
 es/index.html           the landing page, Spanish
 style.css               one stylesheet, hand-written, no build step
 img/<app>/              icon and screenshots for that app
 img/<app>/README.md     where those screenshots came from, and the rules for new ones
-<app>/index.html        the app's page, Spanish
-<app>/en/index.html     the app's page, English
-<app>/privacidad.html   privacy policy, Spanish
-<app>/en/privacy.html   privacy policy, English
+<app>/index.html        the app's page
+<app>/privacy.html      privacy policy
+<app>/es/index.html     the app's page, Spanish
+<app>/es/privacidad.html  privacy policy, Spanish
 <app>/CHANGELOG.md      pushed here by the app's own release workflow
 ```
 
-An app whose own language is English leads in English instead, and LineupMux
-does: `lineupmux/index.html` and `lineupmux/privacy.html` are English, and
-`lineupmux/es/index.html` and `lineupmux/es/privacidad.html` the Spanish. Every
-page links to its other language in the header.
+English is the default everywhere; every page links to its other language in
+the header. Dominada is the one exception to the privacy paths: its policies
+were already in store listings, so they stay at `dominada/en/privacy.html` and
+`dominada/privacidad.html`. Its English page used to be `dominada/en/`, which
+now sends the browser to `dominada/`.
 
 A second app is a new directory and one card on the landing page. That is the
 whole extension mechanism, and it is deliberately boring.
