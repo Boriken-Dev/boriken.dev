@@ -13,6 +13,7 @@ policy the app stores require at a public URL.
 index.html              the landing page: who we are, and the apps
 es/index.html           the landing page, Spanish
 style.css               one stylesheet, hand-written, no build step
+ads.txt, app-ads.txt    the sellers authorised to sell this site's and its apps' ads (AdSense)
 img/<app>/              icon and screenshots for that app
 img/<app>/README.md     where those screenshots came from, and the rules for new ones
 <app>/index.html        the app's page
