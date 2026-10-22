@@ -148,6 +148,9 @@ footer a { color: var(--ivory); }
   .product h3 { color: #bfe6cf; }
   a { color: #7fd3a4; }
   h2 { color: #bfe6cf; }
+  /* --ivory is the page ground here, but the hero and the footer stay green
+     in both schemes: their words keep the light ivory. */
+  .hero, .lang a, footer a { color: #f7f3e8; }
 }
 
 /* ---------------------------------------------------------------- gallery
