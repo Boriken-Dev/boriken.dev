@@ -74,4 +74,4 @@ Screenshots go in `img/<app>/`. They are public, so:
 
 ## Contact
 
-`cacique@boriken.dev` — published on every page, so it has to receive mail.
+`contact@boriken.dev` — published on every page and in the store listings, so it has to receive mail.
