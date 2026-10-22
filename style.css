@@ -118,6 +118,7 @@ figcaption {
   background: #fff;
   transition: border-color 0.15s, transform 0.15s;
 }
+.product + .product { margin-top: 16px; }
 
 .product:hover,
 .product:focus-visible {
