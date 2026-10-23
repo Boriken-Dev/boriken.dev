@@ -21,8 +21,8 @@
 <section>
   <p><strong>Last updated: 23 October 2026.</strong></p>
   <p>
-    LottoHawk has no accounts with us, runs no analytics, carries no
-    advertising, and sends us nothing. There is no server of ours for it to
+    LottoHawk has no accounts with us, runs no analytics of its own, carries
+    no advertising, and sends us nothing. There is no server of ours for it to
     talk to: it downloads published lottery results, and contacts a lottery
     about one of your tickets only when you ask it to.
   </p>
@@ -59,6 +59,20 @@
     not uploaded anywhere and is not kept, unless you have turned on
     <em>Keep scan samples</em>. What the scanner read is always shown to you
     to correct before anything is saved.
+  </p>
+  <p>
+    The reading is done by <strong>Google's ML Kit</strong>, the text and
+    barcode recognition library Google provides for Android apps. ML Kit sends
+    Google diagnostics about its own use: the device model and Android version,
+    LottoHawk's name and version, how long a scan took, error codes, and an
+    identifier for this installation that Google says is not meant to identify
+    you or your device. It does not send the photo, the text it read, or
+    anything about your tickets. This is Google's collection, not ours: we
+    never receive it. Google describes it in
+    <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML
+    Kit's data disclosure</a>, and the
+    <a href="https://policies.google.com/privacy">Google Privacy Policy</a>
+    applies to it.
   </p>
 </section>
 
